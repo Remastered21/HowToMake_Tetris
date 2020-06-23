@@ -1,13 +1,15 @@
 #include <iostream>
 using namespace std;
 
+#include <Windows.h>
+
 // Defining index of available tetriminos
 wstring tetromino[7]; 
 
 // Defining the playing area
 int nFieldWidth = 12;
 int nFieldHeight = 18;
-unsigned char* pField = nullptr; // means null pointer value
+unsigned char* pField = nullptr; // Want to use it for 
 
 
 // Formula for representing tetriminos in 1D indexing to represent 2D.
@@ -21,8 +23,6 @@ int Rotate(int px, int py, int r) {
 	}
 	return 0;
 }
-
-
 
 int main() {
 	// Create assets
@@ -60,5 +60,14 @@ int main() {
 	tetrominos[6].append(L".XX.");
 	tetrominos[6].append(L".X..");
 	tetrominos[6].append(L".X..");
+
+
+	// Initialize array for the playing field
+	pField = new unsigned char[nFieldWidth * nFieldHeight]; // Create playing field
+	for (int x = 0; x < nFieldIWdth; x++) {
+		for (int y = 0; y < nFieldHeight; y++)
+			pField[y * nFieldWidth + x] = (x == 0 || x == nFieldWidth - 1 || y == nField - 1) ? 9 : 0;
+	// 9 represents the border, otherwise use 0
+	}
 
 }
