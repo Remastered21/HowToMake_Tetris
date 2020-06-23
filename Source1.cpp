@@ -69,5 +69,4 @@ int main() {
 			pField[y * nFieldWidth + x] = (x == 0 || x == nFieldWidth - 1 || y == nField - 1) ? 9 : 0;
 	// 9 represents the border, otherwise use 0
 	}
-
 }
