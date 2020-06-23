@@ -1,7 +1,14 @@
 #include <iostream>
 using namespace std;
 
-wstring tetromino[7];
+// Defining index of available tetriminos
+wstring tetromino[7]; 
+
+// Defining the playing area
+int nFieldWidth = 12;
+int nFieldHeight = 18;
+unsigned char* pField = nullptr; // means null pointer value
+
 
 // Formula for representing tetriminos in 1D indexing to represent 2D.
 int Rotate(int px, int py, int r) {
